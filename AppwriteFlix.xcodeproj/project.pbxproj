@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13FF90927743FA000482939 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FF90827743FA000482939 /* Constants.swift */; };
+		C13FF90D277443DE00482939 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FF90C277443DE00482939 /* AuthVM.swift */; };
+		C13FF90F2774444C00482939 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FF90E2774444C00482939 /* MovieDetailsView.swift */; };
+		C13FF9112774460100482939 /* Appwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FF9102774460100482939 /* Appwrite.swift */; };
+		C13FF9142774472400482939 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = C13FF9132774472400482939 /* Appwrite */; };
+		C14D545B2771B8D40022AB55 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D545A2771B8D40022AB55 /* LoginView.swift */; };
+		C14D545E2771B9280022AB55 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D545D2771B9280022AB55 /* SignupView.swift */; };
 		C15DFE072770A1D500C552DB /* AppwriteFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15DFE062770A1D500C552DB /* AppwriteFlixApp.swift */; };
 		C15DFE092770A1D500C552DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15DFE082770A1D500C552DB /* ContentView.swift */; };
 		C15DFE0B2770A1D500C552DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15DFE0A2770A1D500C552DB /* Assets.xcassets */; };
@@ -14,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C13FF90827743FA000482939 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C13FF90C277443DE00482939 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
+		C13FF90E2774444C00482939 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		C13FF9102774460100482939 /* Appwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appwrite.swift; sourceTree = "<group>"; };
+		C14D545A2771B8D40022AB55 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C14D545D2771B9280022AB55 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		C15DFE032770A1D500C552DB /* AppwriteFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppwriteFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15DFE062770A1D500C552DB /* AppwriteFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppwriteFlixApp.swift; sourceTree = "<group>"; };
 		C15DFE082770A1D500C552DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,12 +39,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13FF9142774472400482939 /* Appwrite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C13FF90A277443C700482939 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C13FF90C277443DE00482939 /* AuthVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C13FF90B277443D000482939 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C13FF90827743FA000482939 /* Constants.swift */,
+				C13FF9102774460100482939 /* Appwrite.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C14D545C2771B9170022AB55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C14D545A2771B8D40022AB55 /* LoginView.swift */,
+				C15DFE082770A1D500C552DB /* ContentView.swift */,
+				C14D545D2771B9280022AB55 /* SignupView.swift */,
+				C13FF90E2774444C00482939 /* MovieDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C15DFDFA2770A1D400C552DB = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +93,10 @@
 		C15DFE052770A1D500C552DB /* AppwriteFlix */ = {
 			isa = PBXGroup;
 			children = (
+				C13FF90B277443D000482939 /* Utilities */,
+				C13FF90A277443C700482939 /* ViewModels */,
+				C14D545C2771B9170022AB55 /* Views */,
 				C15DFE062770A1D500C552DB /* AppwriteFlixApp.swift */,
-				C15DFE082770A1D500C552DB /* ContentView.swift */,
 				C15DFE0A2770A1D500C552DB /* Assets.xcassets */,
 				C15DFE0C2770A1D500C552DB /* Preview Content */,
 			);
@@ -83,6 +127,9 @@
 			dependencies = (
 			);
 			name = AppwriteFlix;
+			packageProductDependencies = (
+				C13FF9132774472400482939 /* Appwrite */,
+			);
 			productName = AppwriteFlix;
 			productReference = C15DFE032770A1D500C552DB /* AppwriteFlix.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +158,9 @@
 				Base,
 			);
 			mainGroup = C15DFDFA2770A1D400C552DB;
+			packageReferences = (
+				C13FF9122774472400482939 /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+			);
 			productRefGroup = C15DFE042770A1D500C552DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13FF90D277443DE00482939 /* AuthVM.swift in Sources */,
+				C13FF90F2774444C00482939 /* MovieDetailsView.swift in Sources */,
+				C13FF90927743FA000482939 /* Constants.swift in Sources */,
+				C14D545E2771B9280022AB55 /* SignupView.swift in Sources */,
+				C14D545B2771B8D40022AB55 /* LoginView.swift in Sources */,
+				C13FF9112774460100482939 /* Appwrite.swift in Sources */,
 				C15DFE092770A1D500C552DB /* ContentView.swift in Sources */,
 				C15DFE072770A1D500C552DB /* AppwriteFlixApp.swift in Sources */,
 			);
@@ -343,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C13FF9122774472400482939 /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C13FF9132774472400482939 /* Appwrite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C13FF9122774472400482939 /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
+			productName = Appwrite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C15DFDFB2770A1D400C552DB /* Project object */;
 }
