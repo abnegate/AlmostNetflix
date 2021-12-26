@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    
+    @EnvironmentObject var authVM: AuthVM
     var body: some View {
         VStack {
             Text("AppwriteFlix")

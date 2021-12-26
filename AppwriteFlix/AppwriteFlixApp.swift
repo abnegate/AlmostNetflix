@@ -11,7 +11,8 @@ import SwiftUI
 struct AppwriteFlixApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(AuthVM.shared)
         }
     }
 }

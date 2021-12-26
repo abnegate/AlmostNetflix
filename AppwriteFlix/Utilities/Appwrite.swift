@@ -14,6 +14,8 @@ class AppwriteService {
     let database: Database
     let account: Account
     
+    static let shared = AppwriteService()
+    
     init() {
         client = Client()
         _ = client.setEndpoint("https://demo.appwrite.io/v1")
@@ -21,9 +23,5 @@ class AppwriteService {
         
         database = Database(client)
         account = Account(client)
-    }
-    
-    open func signup(name: String, email: String, password: String, completion: ((Result<AppwriteModels.User, AppwriteError>) -> Void)? = nil) {
-        return account.create(email: email, password: password, name: name, completion: completion)
     }
 }
