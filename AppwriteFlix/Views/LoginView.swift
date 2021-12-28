@@ -30,7 +30,7 @@ struct LoginView: View {
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8.0)
             Button("Login") {
-//                authVM.login(email: email, password: password)
+                authVM.login(email: email, password: password)
             }
             .foregroundColor(.white)
             .padding()

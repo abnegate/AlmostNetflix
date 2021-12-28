@@ -36,7 +36,7 @@ class AuthVM: ObservableObject {
     }
     
     func create(name: String, email: String, password: String) {
-        AppwriteService.shared.account.create(email: email, password: password, name: name) { result in
+        AppwriteService.shared.account.create(userId: "unique()", email: email, password: password, name: name) { result in
             switch result {
             case .failure(let err):
                 DispatchQueue.main.async {

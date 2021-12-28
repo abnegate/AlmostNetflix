@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var moviesVM: MoviesVM = MoviesVM.shared
+    
     var body: some View {
         ScrollView {
-            MovieItemFeaturedView(image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
+            if(moviesVM.catMovies["featured"] != nil) {
+                MovieItemFeaturedView(image: "https://dbqa.appwrite.org/v1/storage/files/" + ((moviesVM.catMovies["featured"] ?? []).first!).thumbnailImageId + "/preview?project=netflix&width=480&height=640" )
+            } else if(!((moviesVM.catMovies["movies"] ?? []).isEmpty)) {
+                MovieItemFeaturedView(image: "https://dbqa.appwrite.org/v1/storage/files/" + ((moviesVM.catMovies["movies"]!).first!).thumbnailImageId + "/preview?project=netflix&width=480&height=640" )
+            }
             VStack {
-                MovieCollection(title: "Released in the Last Year")
-                    .frame(height: 180)
-                MovieCollection(title: "My List")
+                ForEach(appwriteCategories) { category in
+                    MovieCollection(title: category.title, movies: moviesVM.catMovies[category.id] ?? [])
+                        .frame(height: 180)
+                }
+                MovieCollection(title: "My List", movies: moviesVM.catMovies["movies"] ?? [])
                     .frame(height: 270)
             }.padding()
         }

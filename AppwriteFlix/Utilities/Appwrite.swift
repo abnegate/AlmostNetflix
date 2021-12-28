@@ -18,8 +18,8 @@ class AppwriteService {
     
     init() {
         client = Client()
-        _ = client.setEndpoint("https://demo.appwrite.io/v1")
-            .setProject("234w3rsaf")
+        _ = client.setEndpoint("https://dbqa.appwrite.org/v1")
+            .setProject("netflix")
         
         database = Database(client)
         account = Account(client)
