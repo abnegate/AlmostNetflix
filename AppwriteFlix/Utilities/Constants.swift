@@ -45,7 +45,7 @@ let appwriteCategories: [AppwriteCategory] = [
       id: "originals",
       title: "Only on AppwriteFlix",
       queries: [
-          Query.contains("test", value: ["true"]),
+          Query.equal("isOriginal", value: true),
       ],
       orderAttributes: [],
       orderTypes: []
@@ -69,57 +69,48 @@ let appwriteCategories: [AppwriteCategory] = [
     orderTypes: ["DESC"]
 ),
   AppwriteCategory(
-    id: "family",
-    title: "Family meeting!",
-    queries: [
-      // Query.contains("genres", ["Family"])
-    ],
-    orderAttributes: ["releaseDate"],
-    orderTypes: ["DESC"]
-  ),
-  AppwriteCategory(
-    id: "fun",
-    title: "Let's have fun",
-    queries: [
-      // Query.contains("genres", ["Comedy"])
-    ],
-    orderAttributes: ["releaseDate"],
-    orderTypes: ["DESC"]
-  ),
-  AppwriteCategory(
     id: "love",
-    title: "Love is in the air",
+    title: "Love in the Air",
     queries: [
-      // Query.contains("genres", ["Romance"])
+        Query.search("genres", value: "Romance")
     ],
-    orderAttributes: ["releaseDate"],
+    orderAttributes: ["trendingIndex"],
+    orderTypes: ["DESC"]
+  ),
+  AppwriteCategory(
+    id: "animation",
+    title: "Animated worlds",
+    queries: [
+        Query.search("genres", value: "Animation")
+    ],
+    orderAttributes: ["trendingIndex"],
     orderTypes: ["DESC"]
   ),
   AppwriteCategory(
     id: "horror",
     title: "It's getting scarry",
     queries: [
-      // Query.contains("genres", ["Horror"])
+        Query.search("genres", value: "Horror")
     ],
-    orderAttributes: ["releaseDate"],
+    orderAttributes: ["trendingIndex"],
     orderTypes: ["DESC"]
   ),
   AppwriteCategory(
     id: "scifi",
-    title: "Sci-Fi",
+    title: "Sci-Fi awaits...",
     queries: [
-      // Query.contains("genres", ["Science Fiction"])
+        Query.search("genres", value: "Science Fiction")
     ],
-    orderAttributes: ["releaseDate"],
+    orderAttributes: ["trendingIndex"],
     orderTypes: ["DESC"]
   ),
-  AppwriteCategory(
-    id: "thriller",
-    title: "Thriller",
-    queries: [
-      // Query.contains("genres", ["Thriller"])
-    ],
-    orderAttributes: ["releaseDate"],
-    orderTypes: ["DESC"]
-  )
+    AppwriteCategory(
+      id: "anime",
+      title: "Anime?",
+      queries: [
+          Query.search("tags", value: "anime")
+      ],
+      orderAttributes: ["trendingIndex"],
+      orderTypes: ["DESC"]
+    )
 ]

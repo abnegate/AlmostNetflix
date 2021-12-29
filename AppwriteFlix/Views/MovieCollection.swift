@@ -26,20 +26,12 @@ struct MovieCollection: View {
         VStack (alignment: .leading) {
             Text(title)
                 .font(.headline)
-            ScrollView(Axis.Set.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(movies) { movie in
-                        MovieItemThumbnailView(image: "https://dbqa.appwrite.org/v1/storage/files/" + movie.thumbnailImageId + "/preview?project=netflix&width=480&height=640")
+                        MovieItemThumbnailView(movie: movie)
                             .frame(width: itemWidth, height: itemHeight)
                     }
-                    MovieItemThumbnailView(image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
-                        .frame(width: itemWidth, height: itemHeight)
-                    MovieItemThumbnailView(image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
-                        .frame(width: itemWidth, height: itemHeight)
-                    MovieItemThumbnailView(image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
-                        .frame(width: itemWidth, height: itemHeight)
-                    MovieItemThumbnailView(image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
-                        .frame(width: itemWidth, height: itemHeight)
                 }
                 .frame(height: frameHeight)
             }

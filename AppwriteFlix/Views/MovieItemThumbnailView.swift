@@ -9,22 +9,27 @@ import SwiftUI
 import Kingfisher
 
 struct MovieItemThumbnailView: View {
-    let image: String
+    let movie: Movie
     let newReleased = false
     
     var body: some View {
         ZStack {
-            KFImage.url(URL(string: image))
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(4)
+            NavigationLink (destination: MovieDetailsView(movie: movie)) {
+                
+                KFImage.url(URL(string: movie.imageUrl))
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(4)
+            }
         }
     }
 }
 
 struct MovieItemThumbnailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieItemThumbnailView(
-        image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
+        MovieItemThumbnailView(movie: Movie(id: "1", name: "Spider Man", durationMinutes: 200, releaseDate: 2000, ageRestriction: "R", thumbnailImageId: "test", description: "Awesome movie", popularityIndex: 12, netflixReleaseDate: 12334, isOriginal: true,
+                                            tags: "",
+                                            genres: "",
+                                            cast: ""))
     }
 }

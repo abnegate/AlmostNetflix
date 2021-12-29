@@ -9,9 +9,8 @@ import Foundation
 import SwiftUI
 
 class MoviesVM: ObservableObject {
-    @Published var movies: [Movie] = []
     @Published var featured: Movie?
-    @Published var catMovies: [String:[Movie]] = [:]
+    @Published var movies: [String:[Movie]] = [:]
     static let shared = MoviesVM()
     
     init() {
@@ -31,8 +30,7 @@ class MoviesVM: ObservableObject {
                 case .failure(let err):
                     print(err.message)
                 case .success(let docs):
-                    self.catMovies["featured"] = docs.convertTo(fromJson: Movie.from)
-//                    self.featured = docs.convertTo(fromJson: Movie.from).first
+                    self.featured = docs.convertTo(fromJson: Movie.from).first
                     
                 }
                 
@@ -49,7 +47,7 @@ class MoviesVM: ObservableObject {
                     case .failure(let err):
                         print(err.message)
                     case .success(let docs):
-                        self.catMovies[category.id] = docs.convertTo(fromJson: Movie.from)
+                        self.movies[category.id] = docs.convertTo(fromJson: Movie.from)
                         //                    self.movies = docs.convertTo(fromJson: Movie.from)
                         
                     }

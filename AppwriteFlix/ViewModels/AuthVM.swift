@@ -17,9 +17,11 @@ class AuthVM: ObservableObject {
     
     init() {
         getAccount()
+//        AppwriteService.shared.account.updatePrefs(prefs: ["name":"game"])
     }
     
     private func getAccount() {
+        error = ""
         AppwriteService.shared.account.get() { result in
             DispatchQueue.main.async {
                 switch result {
@@ -36,6 +38,7 @@ class AuthVM: ObservableObject {
     }
     
     func create(name: String, email: String, password: String) {
+        error = ""
         AppwriteService.shared.account.create(userId: "unique()", email: email, password: password, name: name) { result in
             switch result {
             case .failure(let err):
@@ -50,6 +53,7 @@ class AuthVM: ObservableObject {
     }
     
     func logout() {
+        error = ""
         AppwriteService.shared.account.deleteSession(sessionId: "current") { result in
             DispatchQueue.main.async {
                 switch result {
@@ -64,6 +68,7 @@ class AuthVM: ObservableObject {
     }
     
     func loginAnonymous() {
+        error = ""
         AppwriteService.shared.account.createAnonymousSession() { result in
             switch result {
             case .failure(let err):
@@ -77,6 +82,7 @@ class AuthVM: ObservableObject {
     }
     
     public func login(email: String, password: String) {
+        error = ""
         AppwriteService.shared.account.createSession(email: email, password: password) { result in
             switch result {
             case .failure(let err):

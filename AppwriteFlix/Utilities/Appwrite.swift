@@ -18,8 +18,9 @@ class AppwriteService {
     
     init() {
         client = Client()
-        _ = client.setEndpoint("https://dbqa.appwrite.org/v1")
-            .setProject("netflix")
+        _ = client.setEndpoint("https://dbdemos.appwrite.org/v1")
+            .setProject("almostNetflix")
+            .setSelfSigned()
         
         database = Database(client)
         account = Account(client)

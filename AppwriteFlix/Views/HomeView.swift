@@ -11,22 +11,28 @@ struct HomeView: View {
     @ObservedObject var moviesVM: MoviesVM = MoviesVM.shared
     
     var body: some View {
-        ScrollView {
-            if(moviesVM.catMovies["featured"] != nil) {
-                MovieItemFeaturedView(image: "https://dbqa.appwrite.org/v1/storage/files/" + ((moviesVM.catMovies["featured"] ?? []).first!).thumbnailImageId + "/preview?project=netflix&width=480&height=640" )
-            } else if(!((moviesVM.catMovies["movies"] ?? []).isEmpty)) {
-                MovieItemFeaturedView(image: "https://dbqa.appwrite.org/v1/storage/files/" + ((moviesVM.catMovies["movies"]!).first!).thumbnailImageId + "/preview?project=netflix&width=480&height=640" )
-            }
-            VStack {
-                ForEach(appwriteCategories) { category in
-                    MovieCollection(title: category.title, movies: moviesVM.catMovies[category.id] ?? [])
-                        .frame(height: 180)
+        NavigationView {
+            ZStack {
+                Color(.black).ignoresSafeArea()
+                ScrollView(.vertical, showsIndicators: false) {
+                    if(moviesVM.featured != nil) {
+                        MovieItemFeaturedView(movie:  moviesVM.featured! )
+                    } else if(!((moviesVM.movies["movies"] ?? []).isEmpty)) {
+                        MovieItemFeaturedView(movie: (moviesVM.movies["movies"]!).first!)
+                    }
+                    VStack {
+                        ForEach(appwriteCategories) { category in
+                            MovieCollection(title: category.title, movies: moviesVM.movies[category.id] ?? [])
+                                .frame(height: 180)
+                        }
+                    }.padding()
                 }
-                MovieCollection(title: "My List", movies: moviesVM.catMovies["movies"] ?? [])
-                    .frame(height: 270)
-            }.padding()
+            }
+            .foregroundColor(.white)
         }
-        .edgesIgnoringSafeArea(.top)
+
+        
+
     }
 }
 

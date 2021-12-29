@@ -9,19 +9,61 @@ import SwiftUI
 import Kingfisher
 
 struct MovieItemFeaturedView: View {
-    let image: String
+    let movie: Movie
+    @State private var isShowingDetailView = false
     
     var body: some View {
-        ZStack {
-            KFImage.url(URL(string: image))
+        ZStack{
+            KFImage.url(URL(string: movie.imageUrl))
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
+                .clipped()
+            VStack {
+                Spacer()
+                Text(movie.tags)
+                    .foregroundColor(.white)
+                HStack {
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        VStack {
+                            Image(systemName: "plus")
+                            Text("My List")
+                        }
+                        .padding()
+                    }
+                    .foregroundColor(.white)
+                    .cornerRadius(4)
+                    
+                    NavigationLink(destination: MovieDetailsView(movie: movie), isActive: $isShowingDetailView) { EmptyView() }
+                    Button {
+                        self.isShowingDetailView = true
+                    } label: {
+                        VStack {
+                            Image(systemName: "info.circle")
+                            Text("Info")
+                        }
+                        .padding()
+                    }
+                    .foregroundColor(.white)
+                    .cornerRadius(4)
+                    Spacer()
+                }
+                .padding()
+                .frame(height: 60)
+            }
+            .background(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.0), Color.black.opacity(0.99)]), startPoint: .top, endPoint: .bottom))
         }
+        .foregroundColor(.white)
     }
+    
+    
 }
 
 struct MovieItemFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieItemFeaturedView(image: "https://www.themoviedb.org/t/p/w1280/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg")
+        MovieItemFeaturedView(movie: Movie(id: "1", name: "Spider Man", durationMinutes: 200, releaseDate: 2000, ageRestriction: "R", thumbnailImageId: "test", description: "Awesome movie", popularityIndex: 12, netflixReleaseDate: 12334, isOriginal: true,
+            tags: "", genres: "", cast: ""))
     }
 }
