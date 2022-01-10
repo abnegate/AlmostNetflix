@@ -14,6 +14,7 @@ struct MainView: View {
         Group {
             if authVM.isLoggedIn {
                 HomeView()
+                    .environmentObject(MoviesVM(userId: authVM.user!.id))
             } else {
                 LoginView()
             }

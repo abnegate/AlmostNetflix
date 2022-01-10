@@ -10,6 +10,8 @@ import Kingfisher
 
 struct MovieDetailsView: View {
     let movie: Movie
+    @EnvironmentObject var moviesVM:MoviesVM
+    @EnvironmentObject var authVM: AuthVM
     
     var body: some View {
         ZStack {
@@ -41,10 +43,10 @@ struct MovieDetailsView: View {
                 
                 HStack {
                     Button {
-                        
+                        self.addToMyList()
                     } label: {
                         VStack {
-                            Image(systemName: "plus")
+                            Image(systemName: moviesVM.watchList.contains(movie.id) ? "checkmark" : "plus")
                             Text("My List")
                         }
                         .padding()
@@ -53,10 +55,20 @@ struct MovieDetailsView: View {
                     .cornerRadius(4)
                 }
                 .padding(.horizontal)
+                
+                VStack(alignment: .leading) {
+                    Text("More like this".uppercased())
+                        .font(.headline)
+                    MovieGridView(movies: moviesVM.movies["watchlist"] ?? [])
+                }.padding(.horizontal)
 
             }
             .foregroundColor(.white)
         }
+    }
+    
+    func addToMyList() -> Void {
+        moviesVM.addToMyList(movie.id)
     }
 }
 

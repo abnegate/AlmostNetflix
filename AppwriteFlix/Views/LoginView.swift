@@ -13,32 +13,35 @@ struct LoginView: View {
     
     @EnvironmentObject var authVM: AuthVM
     var body: some View {
-        VStack {
-            Text("AppwriteFlix")
-                .foregroundColor(.red)
-                .font(.largeTitle)
-                .bold()
-                .padding(.top)
-            
-            TextField("E-mail", text: self.$email)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8.0)
-
-            SecureField("Password", text: self.$password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8.0)
-            Button("Login") {
-                authVM.login(email: email, password: password)
-            }
-            .foregroundColor(.white)
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color.red)
-            .cornerRadius(8.0)
+        ZStack {
+            Color.black.ignoresSafeArea()
+            VStack {
+                Text("AppwriteFlix")
+                    .foregroundColor(.red)
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top)
                 
-        }.padding()
+                TextField("E-mail", text: self.$email)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8.0)
+                
+                SecureField("Password", text: self.$password)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8.0)
+                Button("Login") {
+                    authVM.login(email: email, password: password)
+                }
+                .foregroundColor(.white)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.red)
+                .cornerRadius(8.0)
+                
+            }.padding()
+        }
         
     }
         

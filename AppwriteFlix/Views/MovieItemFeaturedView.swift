@@ -9,8 +9,10 @@ import SwiftUI
 import Kingfisher
 
 struct MovieItemFeaturedView: View {
-    let movie: Movie
     @State private var isShowingDetailView = false
+    let movie: Movie
+    let isInWatchlist: Bool
+    let onTapMyList: () -> Void
     
     var body: some View {
         ZStack{
@@ -25,10 +27,10 @@ struct MovieItemFeaturedView: View {
                 HStack {
                     Spacer()
                     Button {
-                        
+                        onTapMyList()
                     } label: {
                         VStack {
-                            Image(systemName: "plus")
+                            Image(systemName: self.isInWatchlist ?"checkmark" :"plus")
                             Text("My List")
                         }
                         .padding()
@@ -64,6 +66,7 @@ struct MovieItemFeaturedView: View {
 struct MovieItemFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
         MovieItemFeaturedView(movie: Movie(id: "1", name: "Spider Man", durationMinutes: 200, releaseDate: 2000, ageRestriction: "R", thumbnailImageId: "test", description: "Awesome movie", popularityIndex: 12, netflixReleaseDate: 12334, isOriginal: true,
-            tags: "", genres: "", cast: ""))
+                                           tags: "", genres: "", cast: ""),
+                              isInWatchlist: true, onTapMyList: {})
     }
 }
