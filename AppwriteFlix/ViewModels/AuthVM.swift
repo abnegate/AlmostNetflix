@@ -9,9 +9,11 @@ import Foundation
 import Appwrite
 
 class AuthVM: ObservableObject {
-    @Published var isLoggedIn = false
+    
     @Published var error: String?
     @Published var user: User?
+    
+    @Published var checkedForUser = false
     
     static let shared = AuthVM()
     
@@ -23,13 +25,15 @@ class AuthVM: ObservableObject {
         error = ""
         AppwriteService.shared.account.get() { result in
             DispatchQueue.main.async {
+                
+                self.checkedForUser = true
+                
                 switch result {
                 case .failure(let err):
                     self.error = err.message
-                    self.isLoggedIn = false
+                    self.user = nil
                 case .success(let user):
                     self.user = user
-                    self.isLoggedIn = true
                 }
                 
             }
@@ -59,7 +63,7 @@ class AuthVM: ObservableObject {
                 case .failure(let err):
                     self.error = err.message
                 case .success(_):
-                    self.isLoggedIn = false
+                    self.user = nil
                     self.error = nil
                 }
             }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23154783278C22F6002BAB79 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = 23154782278C22F6002BAB79 /* Appwrite */; };
 		23154785278D4BB3002BAB79 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23154784278D4BB3002BAB79 /* TitleView.swift */; };
+		2315478B278D7942002BAB79 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2315478A278D7942002BAB79 /* SplashView.swift */; };
 		C100A5C7277EE4B300F3EA37 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100A5C6277EE4B300F3EA37 /* WatchlistView.swift */; };
 		C1155D232781B9DF000EF91C /* MovieGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1155D222781B9DF000EF91C /* MovieGridView.swift */; };
 		C137E28A2778573700C0C6C0 /* MovieItemThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137E2892778573700C0C6C0 /* MovieItemThumbnailView.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		23154784278D4BB3002BAB79 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		2315478A278D7942002BAB79 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C100A5C6277EE4B300F3EA37 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		C1155D222781B9DF000EF91C /* MovieGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridView.swift; sourceTree = "<group>"; };
 		C137E2892778573700C0C6C0 /* MovieItemThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemThumbnailView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				C100A5C6277EE4B300F3EA37 /* WatchlistView.swift */,
 				C1155D222781B9DF000EF91C /* MovieGridView.swift */,
 				23154784278D4BB3002BAB79 /* TitleView.swift */,
+				2315478A278D7942002BAB79 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				C1155D232781B9DF000EF91C /* MovieGridView.swift in Sources */,
 				C14D545E2771B9280022AB55 /* SignupView.swift in Sources */,
 				C14D545B2771B8D40022AB55 /* LoginView.swift in Sources */,
+				2315478B278D7942002BAB79 /* SplashView.swift in Sources */,
 				C13FF9112774460100482939 /* Appwrite.swift in Sources */,
 				C100A5C7277EE4B300F3EA37 /* WatchlistView.swift in Sources */,
 				C15DFE092770A1D500C552DB /* MainView.swift in Sources */,

@@ -13,9 +13,10 @@ struct MainView: View {
 
     var body: some View {
         Group {
-            if authVM.isLoggedIn {
-                HomeView()
-                    .environmentObject(MoviesVM(userId: authVM.user!.id))
+            if !authVM.checkedForUser {
+                SplashView()
+            } else if authVM.user != nil {
+                HomeView().environmentObject(MoviesVM(userId: authVM.user!.id))
             } else {
                 TitleView()
             }

@@ -20,7 +20,7 @@ class AppwriteService {
     
     init() {
         client = Client()
-            .setEndpoint("http://dbdemos.appwrite.org/v1")
+            .setEndpoint("https://demo.appwrite.io/v1")
             .setProject("almostNetflix2")
             .setSelfSigned()
         
