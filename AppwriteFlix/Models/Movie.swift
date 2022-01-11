@@ -69,7 +69,7 @@ class Movie: Identifiable {
         self.tags = tags
         self.genres = genres
         self.cast = cast
-        self.imageUrl = "https://dbqa2.appwrite.org/v1/storage/files/" + thumbnailImageId + "/preview?project=almostNetflix&width=320&height=480"
+        self.imageUrl = AppwriteService.shared.client.endPoint + "/storage/files/" + thumbnailImageId + "/preview?project=almostNetflix2&width=320&height=480"
     }
     
     public static func from(map: [String: Any]) -> Movie {
