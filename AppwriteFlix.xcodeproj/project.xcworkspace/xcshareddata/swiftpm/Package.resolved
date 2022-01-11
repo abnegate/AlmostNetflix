@@ -21,11 +21,11 @@
       },
       {
         "package": "Appwrite",
-        "repositoryURL": "https://github.com/aw-tests/sdk-for-apple",
+        "repositoryURL": "https://github.com/appwrite/sdk-for-apple",
         "state": {
-          "branch": "test",
-          "revision": "34f9cc78443c4208017e9399a151f355af9517b3",
-          "version": null
+          "branch": null,
+          "revision": "af4a92d71cb3260fd9252bdb165337553e8e57f5",
+          "version": "0.2.1"
         }
       },
       {

@@ -15,7 +15,6 @@ struct MovieItemThumbnailView: View {
     var body: some View {
         ZStack {
             NavigationLink (destination: MovieDetailsView(movie: movie)) {
-                
                 KFImage.url(URL(string: movie.imageUrl))
                     .resizable()
                     .scaledToFit()

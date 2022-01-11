@@ -17,7 +17,6 @@ class AuthVM: ObservableObject {
     
     init() {
         getAccount()
-//        AppwriteService.shared.account.updatePrefs(prefs: ["name":"game"])
     }
     
     private func getAccount() {

@@ -32,12 +32,13 @@ class Movie: Identifiable {
     public func releaseYear() -> String {
         let date = NSDate(timeIntervalSince1970: TimeInterval(releaseDate ?? 0))
         let dayTimePeriodFormatter = DateFormatter()
-                dayTimePeriodFormatter.dateFormat = "YYYY"
-             // UnComment below to get only time
-            //  dayTimePeriodFormatter.dateFormat = "hh:mm a"
+        dayTimePeriodFormatter.dateFormat = "YYYY"
+        
+        // UnComment below to get only time
+        //  dayTimePeriodFormatter.dateFormat = "hh:mm a"
 
-                let dateString = dayTimePeriodFormatter.string(from: date as Date)
-                return dateString
+        let dateString = dayTimePeriodFormatter.string(from: date as Date)
+        return dateString
     }
     
     init(

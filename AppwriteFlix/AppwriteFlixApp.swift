@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct AppwriteFlixApp: App {
+    
     var body: some Scene {
         WindowGroup {
             MainView()

@@ -12,33 +12,38 @@ struct LoginView: View {
     @State private var password = ""
     
     @EnvironmentObject var authVM: AuthVM
+    
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
+            
             VStack {
-                Text("AppwriteFlix")
-                    .foregroundColor(.red)
+                Text("Sign In")
+                    .foregroundColor(.white)
                     .font(.largeTitle)
                     .bold()
-                    .padding(.top)
+                    .padding()
                 
                 TextField("E-mail", text: self.$email)
                     .padding()
                     .background(Color.gray.opacity(0.2))
+                    .foregroundColor(Color.white)
                     .cornerRadius(8.0)
                 
                 SecureField("Password", text: self.$password)
                     .padding()
                     .background(Color.gray.opacity(0.2))
+                    .foregroundColor(Color.white)
                     .cornerRadius(8.0)
+                
                 Button("Login") {
                     authVM.login(email: email, password: password)
                 }
-                .foregroundColor(.white)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color.red)
-                .cornerRadius(8.0)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.red)
+                    .cornerRadius(8.0)
                 
             }.padding()
         }

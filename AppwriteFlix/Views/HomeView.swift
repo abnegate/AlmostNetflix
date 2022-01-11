@@ -11,19 +11,24 @@ struct HomeView: View {
     @EnvironmentObject var moviesVM: MoviesVM
     @EnvironmentObject var authVM: AuthVM
     
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Color(.black).ignoresSafeArea()
+                
                 ScrollView(.vertical, showsIndicators: false) {
-                        if(moviesVM.featured != nil) {
-                            MovieItemFeaturedView(movie:  moviesVM.featured!, isInWatchlist: moviesVM.watchList.contains(moviesVM.featured!.id) , onTapMyList: {
-                                self.onTapMyList(moviesVM.featured!.id)
-                            })
-                        } else if(!((moviesVM.movies["movies"] ?? []).isEmpty)) {
-                            let movie = (moviesVM.movies["movies"]!).first!
-                            MovieItemFeaturedView(movie: movie, isInWatchlist: moviesVM.watchList.contains(movie.id), onTapMyList: { self.onTapMyList(movie.id)})
-                        }
+                    if(moviesVM.featured != nil) {
+                        MovieItemFeaturedView(movie:  moviesVM.featured!, isInWatchlist: moviesVM.watchList.contains(moviesVM.featured!.id) , onTapMyList: {
+                            self.onTapMyList(moviesVM.featured!.id)
+                        })
+                    } else if(!((moviesVM.movies["movies"] ?? []).isEmpty)) {
+                        let movie = (moviesVM.movies["movies"]!).first!
+                        MovieItemFeaturedView(movie: movie, isInWatchlist: moviesVM.watchList.contains(movie.id), onTapMyList: { self.onTapMyList(movie.id)})
+                    }
                     
                     VStack(alignment: .leading, spacing: 16) {
                         ForEach(appwriteCategories) { category in
@@ -33,35 +38,16 @@ struct HomeView: View {
                     }.padding(.horizontal)
                 }
             }.ignoresSafeArea(.all, edges: .top)
-            
-            .foregroundColor(.white)
+                .foregroundColor(Color.white)
             .navigationTitle("")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     NavigationLink(destination: WatchlistView()) {
                         Text("My List")
                     }
-                    .foregroundColor(.white)
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationViewStyle(.stack)
-        }
-        .onAppear {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color.red),]
-            appearance.titleTextAttributes = [.foregroundColor: UIColor(Color.red),]
-            appearance.titlePositionAdjustment = UIOffset.zero
-            let standardAppearance = UINavigationBarAppearance()
-            standardAppearance.configureWithTransparentBackground()
-            UINavigationBar.appearance().scrollEdgeAppearance = standardAppearance
-            UINavigationBar.appearance().standardAppearance = appearance
-        }
-        
-
-        
-
+        }.accentColor(Color.red)
     }
     
     func onTapMyList(_ movieId: String) -> Void {

@@ -9,14 +9,18 @@ import SwiftUI
 import Kingfisher
 
 struct MovieDetailsView: View {
+    
     let movie: Movie
+    
     @EnvironmentObject var moviesVM:MoviesVM
     @EnvironmentObject var authVM: AuthVM
     
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
+            
             ScrollView(.vertical, showsIndicators: false) {
+                
                 KFImage.url(URL(string: movie.imageUrl))
                     .resizable()
                     .scaledToFill()
@@ -27,8 +31,6 @@ struct MovieDetailsView: View {
                     Text(movie.name)
                         .font(.title)
 
-                
-                
                     HStack {
                         Text(movie.releaseYear())
                         Text(movie.ageRestriction)

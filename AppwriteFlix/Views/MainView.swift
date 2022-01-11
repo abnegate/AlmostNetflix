@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    
     @EnvironmentObject var authVM: AuthVM
 
     var body: some View {
@@ -16,7 +17,7 @@ struct MainView: View {
                 HomeView()
                     .environmentObject(MoviesVM(userId: authVM.user!.id))
             } else {
-                LoginView()
+                TitleView()
             }
         }
         .animation(.easeInOut)
