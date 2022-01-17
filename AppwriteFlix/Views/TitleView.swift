@@ -64,7 +64,6 @@ struct TitleView: View {
             }
         }.accentColor(Color.red)
     }
-        
 }
 
 struct TitleView_Previews: PreviewProvider {

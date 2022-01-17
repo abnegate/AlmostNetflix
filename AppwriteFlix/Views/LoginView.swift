@@ -47,9 +47,7 @@ struct LoginView: View {
                 
             }.padding()
         }
-        
     }
-        
 }
 
 struct LoginView_Previews: PreviewProvider {

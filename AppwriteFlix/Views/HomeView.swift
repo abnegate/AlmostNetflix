@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @EnvironmentObject var moviesVM: MoviesVM
-    @EnvironmentObject var authVM: AuthVM
     
     init() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
@@ -22,23 +22,35 @@ struct HomeView: View {
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     if(moviesVM.featured != nil) {
-                        MovieItemFeaturedView(movie:  moviesVM.featured!, isInWatchlist: moviesVM.watchList.contains(moviesVM.featured!.id) , onTapMyList: {
-                            self.onTapMyList(moviesVM.featured!.id)
-                        })
+                        MovieItemFeaturedView(
+                            movie: moviesVM.featured!,
+                            isInWatchlist: moviesVM.watchList.contains(moviesVM.featured!.id),
+                            onTapMyList: {
+                                self.onTapMyList(moviesVM.featured!.id)
+                            }
+                        )
                     } else if(!((moviesVM.movies["movies"] ?? []).isEmpty)) {
                         let movie = (moviesVM.movies["movies"]!).first!
-                        MovieItemFeaturedView(movie: movie, isInWatchlist: moviesVM.watchList.contains(movie.id), onTapMyList: { self.onTapMyList(movie.id)})
+                        
+                        MovieItemFeaturedView(
+                            movie: movie,
+                            isInWatchlist: moviesVM.watchList.contains(movie.id),
+                            onTapMyList: {
+                                self.onTapMyList(movie.id)
+                            }
+                        )
                     }
                     
                     VStack(alignment: .leading, spacing: 16) {
                         ForEach(appwriteCategories) { category in
-                            MovieCollection(title: category.title, movies: moviesVM.movies[category.id] ?? [])
+                            MovieCollectionView(title: category.title, movies: moviesVM.movies[category.id] ?? [])
                                 .frame(height: 180)
                         }
                     }.padding(.horizontal)
                 }
-            }.ignoresSafeArea(.all, edges: .top)
-                .foregroundColor(Color.white)
+            }
+            .ignoresSafeArea(.all, edges: .top)
+            .foregroundColor(Color.white)
             .navigationTitle("")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {

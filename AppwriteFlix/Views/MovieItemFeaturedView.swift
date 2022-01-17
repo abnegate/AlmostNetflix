@@ -30,7 +30,7 @@ struct MovieItemFeaturedView: View {
                         onTapMyList()
                     } label: {
                         VStack {
-                            Image(systemName: self.isInWatchlist ?"checkmark" :"plus")
+                            Image(systemName: self.isInWatchlist ? "checkmark" :"plus")
                             Text("My List")
                         }
                         .padding()

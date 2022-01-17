@@ -10,10 +10,9 @@ import Appwrite
 
 class AuthVM: ObservableObject {
     
+    @Published var checkedForUser = false
     @Published var error: String?
     @Published var user: User?
-    
-    @Published var checkedForUser = false
     
     static let shared = AuthVM()
     

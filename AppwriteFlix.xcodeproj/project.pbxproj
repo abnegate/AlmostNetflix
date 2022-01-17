@@ -13,7 +13,7 @@
 		C100A5C7277EE4B300F3EA37 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100A5C6277EE4B300F3EA37 /* WatchlistView.swift */; };
 		C1155D232781B9DF000EF91C /* MovieGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1155D222781B9DF000EF91C /* MovieGridView.swift */; };
 		C137E28A2778573700C0C6C0 /* MovieItemThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137E2892778573700C0C6C0 /* MovieItemThumbnailView.swift */; };
-		C137E28C27785BFC00C0C6C0 /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137E28B27785BFC00C0C6C0 /* MovieCollection.swift */; };
+		C137E28C27785BFC00C0C6C0 /* MovieCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137E28B27785BFC00C0C6C0 /* MovieCollectionView.swift */; };
 		C137E28E27785C3600C0C6C0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137E28D27785C3600C0C6C0 /* Movie.swift */; };
 		C137E2902778672500C0C6C0 /* MovieItemFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137E28F2778672500C0C6C0 /* MovieItemFeaturedView.swift */; };
 		C13FF90927743FA000482939 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FF90827743FA000482939 /* Constants.swift */; };
@@ -38,7 +38,7 @@
 		C100A5C6277EE4B300F3EA37 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		C1155D222781B9DF000EF91C /* MovieGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridView.swift; sourceTree = "<group>"; };
 		C137E2892778573700C0C6C0 /* MovieItemThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemThumbnailView.swift; sourceTree = "<group>"; };
-		C137E28B27785BFC00C0C6C0 /* MovieCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollection.swift; sourceTree = "<group>"; };
+		C137E28B27785BFC00C0C6C0 /* MovieCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionView.swift; sourceTree = "<group>"; };
 		C137E28D27785C3600C0C6C0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C137E28F2778672500C0C6C0 /* MovieItemFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemFeaturedView.swift; sourceTree = "<group>"; };
 		C13FF90827743FA000482939 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				C13FF90E2774444C00482939 /* MovieDetailsView.swift */,
 				C1E2917327784F3700124782 /* HomeView.swift */,
 				C137E2892778573700C0C6C0 /* MovieItemThumbnailView.swift */,
-				C137E28B27785BFC00C0C6C0 /* MovieCollection.swift */,
+				C137E28B27785BFC00C0C6C0 /* MovieCollectionView.swift */,
 				C137E28F2778672500C0C6C0 /* MovieItemFeaturedView.swift */,
 				C100A5C6277EE4B300F3EA37 /* WatchlistView.swift */,
 				C1155D222781B9DF000EF91C /* MovieGridView.swift */,
@@ -251,7 +251,7 @@
 				C13FF9112774460100482939 /* Appwrite.swift in Sources */,
 				C100A5C7277EE4B300F3EA37 /* WatchlistView.swift in Sources */,
 				C15DFE092770A1D500C552DB /* MainView.swift in Sources */,
-				C137E28C27785BFC00C0C6C0 /* MovieCollection.swift in Sources */,
+				C137E28C27785BFC00C0C6C0 /* MovieCollectionView.swift in Sources */,
 				C15DFE072770A1D500C552DB /* AppwriteFlixApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +393,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,7 +425,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

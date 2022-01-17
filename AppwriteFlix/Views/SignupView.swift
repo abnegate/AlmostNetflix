@@ -21,7 +21,7 @@ struct SignupView: View {
             
             VStack {
                 Text("Sign Up")
-                    .foregroundColor(.red)
+                    .foregroundColor(.white)
                     .font(.largeTitle)
                     .bold()
                     .padding(.top)
@@ -55,9 +55,7 @@ struct SignupView: View {
                 
             }.padding()
         }
-        
     }
-        
 }
 
 struct SignupView_Previews: PreviewProvider {

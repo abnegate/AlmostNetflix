@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MovieCollection: View {
+struct MovieCollectionView: View {
     let movies: [Movie]
     let title: String
     let itemHeight: CGFloat?
@@ -41,7 +41,7 @@ struct MovieCollection: View {
 
 struct MovieCollection_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCollection(title: "Movies", movies: [],
+        MovieCollectionView(title: "Movies", movies: [],
             itemWidth: 100, itemHeight: 200)
     }
 }
