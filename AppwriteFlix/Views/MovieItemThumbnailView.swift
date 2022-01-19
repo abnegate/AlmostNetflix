@@ -20,6 +20,7 @@ struct MovieItemThumbnailView: View {
                     .scaledToFit()
                     .cornerRadius(4)
             }
+            .navigationTitle("")
         }
     }
 }

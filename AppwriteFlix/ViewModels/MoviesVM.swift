@@ -42,8 +42,26 @@ class MoviesVM: ObservableObject {
     
     func addToMyList(_ movieId: String) {
         if(self.watchList.contains(movieId)) {
-            //remove
-            AppwriteService.shared.database.listDocuments(collectionId: "watchlists", queries: [
+            removeFromMyList(movieId)
+        } else {
+            AppwriteService.shared.database.createDocument(collectionId: "watchlists", documentId: "unique()", data: ["userId": userId, "movieId": movieId, "createdAt": Int(NSDate.now.timeIntervalSince1970)], read: ["user:\(userId)"], write: ["user:\(userId)"]){ result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let err):
+                        print(err.message)
+                    case .success(_):
+                        self.watchList.append(movieId)
+                        self.getMyWatchlist()
+                        print("successfully added to watchlist")
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    func removeFromMyList(_ movieId: String) {
+        AppwriteService.shared.database.listDocuments(collectionId: "watchlists", queries: [
                 Query.equal("userId", value: userId),
                 Query.equal("movieId", value: movieId)
             ], limit: 1) { result in
@@ -68,22 +86,6 @@ class MoviesVM: ObservableObject {
                     }
                 }
             }
-        } else {
-            
-            AppwriteService.shared.database.createDocument(collectionId: "watchlists", documentId: "unique()", data: ["userId": userId, "movieId": movieId, "createdAt": Int(NSDate.now.timeIntervalSince1970)], read: ["user:\(userId)"], write: ["user:\(userId)"]){ result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .failure(let err):
-                        print(err.message)
-                    case .success(_):
-                        self.watchList.append(movieId)
-                        self.getMyWatchlist()
-                        print("successfully added to watchlist")
-                    }
-                    
-                }
-            }
-        }
     }
     
     func isInWatchlist(_ movieIds: [String]) {
