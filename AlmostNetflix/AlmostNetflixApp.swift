@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AppwriteFlixApp: App {
+struct AlmostNetflixApp: App {
     
     var body: some Scene {
         WindowGroup {

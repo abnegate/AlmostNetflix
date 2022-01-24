@@ -22,7 +22,7 @@
 		C13FF9112774460100482939 /* Appwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13FF9102774460100482939 /* Appwrite.swift */; };
 		C14D545B2771B8D40022AB55 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D545A2771B8D40022AB55 /* LoginView.swift */; };
 		C14D545E2771B9280022AB55 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D545D2771B9280022AB55 /* SignupView.swift */; };
-		C15DFE072770A1D500C552DB /* AppwriteFlixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15DFE062770A1D500C552DB /* AppwriteFlixApp.swift */; };
+		C15DFE072770A1D500C552DB /* AlmostNetflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15DFE062770A1D500C552DB /* AlmostNetflixApp.swift */; };
 		C15DFE092770A1D500C552DB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15DFE082770A1D500C552DB /* MainView.swift */; };
 		C15DFE0B2770A1D500C552DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15DFE0A2770A1D500C552DB /* Assets.xcassets */; };
 		C15DFE0E2770A1D500C552DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15DFE0D2770A1D500C552DB /* Preview Assets.xcassets */; };
@@ -48,8 +48,8 @@
 		C1409B8F277B07B0000AACA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C14D545A2771B8D40022AB55 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C14D545D2771B9280022AB55 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		C15DFE032770A1D500C552DB /* AppwriteFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppwriteFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C15DFE062770A1D500C552DB /* AppwriteFlixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppwriteFlixApp.swift; sourceTree = "<group>"; };
+		C15DFE032770A1D500C552DB /* AlmostNetflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlmostNetflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C15DFE062770A1D500C552DB /* AlmostNetflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmostNetflixApp.swift; sourceTree = "<group>"; };
 		C15DFE082770A1D500C552DB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C15DFE0A2770A1D500C552DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C15DFE0D2770A1D500C552DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		C15DFDFA2770A1D400C552DB = {
 			isa = PBXGroup;
 			children = (
-				C15DFE052770A1D500C552DB /* AppwriteFlix */,
+				C15DFE052770A1D500C552DB /* AlmostNetflix */,
 				C15DFE042770A1D500C552DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,12 +119,12 @@
 		C15DFE042770A1D500C552DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C15DFE032770A1D500C552DB /* AppwriteFlix.app */,
+				C15DFE032770A1D500C552DB /* AlmostNetflix.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C15DFE052770A1D500C552DB /* AppwriteFlix */ = {
+		C15DFE052770A1D500C552DB /* AlmostNetflix */ = {
 			isa = PBXGroup;
 			children = (
 				C1409B8F277B07B0000AACA0 /* Info.plist */,
@@ -132,11 +132,11 @@
 				C13FF90B277443D000482939 /* Utilities */,
 				C13FF90A277443C700482939 /* ViewModels */,
 				C14D545C2771B9170022AB55 /* Views */,
-				C15DFE062770A1D500C552DB /* AppwriteFlixApp.swift */,
+				C15DFE062770A1D500C552DB /* AlmostNetflixApp.swift */,
 				C15DFE0A2770A1D500C552DB /* Assets.xcassets */,
 				C15DFE0C2770A1D500C552DB /* Preview Content */,
 			);
-			path = AppwriteFlix;
+			path = AlmostNetflix;
 			sourceTree = "<group>";
 		};
 		C15DFE0C2770A1D500C552DB /* Preview Content */ = {
@@ -159,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C15DFE022770A1D500C552DB /* AppwriteFlix */ = {
+		C15DFE022770A1D500C552DB /* AlmostNetflix */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C15DFE112770A1D500C552DB /* Build configuration list for PBXNativeTarget "AppwriteFlix" */;
+			buildConfigurationList = C15DFE112770A1D500C552DB /* Build configuration list for PBXNativeTarget "AlmostNetflix" */;
 			buildPhases = (
 				C15DFDFF2770A1D500C552DB /* Sources */,
 				C15DFE002770A1D500C552DB /* Frameworks */,
@@ -171,13 +171,13 @@
 			);
 			dependencies = (
 			);
-			name = AppwriteFlix;
+			name = AlmostNetflix;
 			packageProductDependencies = (
 				C1B584AF2779F37F00447897 /* Kingfisher */,
 				23154782278C22F6002BAB79 /* Appwrite */,
 			);
 			productName = AppwriteFlix;
-			productReference = C15DFE032770A1D500C552DB /* AppwriteFlix.app */;
+			productReference = C15DFE032770A1D500C552DB /* AlmostNetflix.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C15DFDFE2770A1D400C552DB /* Build configuration list for PBXProject "AppwriteFlix" */;
+			buildConfigurationList = C15DFDFE2770A1D400C552DB /* Build configuration list for PBXProject "AlmostNetflix" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -212,7 +212,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C15DFE022770A1D500C552DB /* AppwriteFlix */,
+				C15DFE022770A1D500C552DB /* AlmostNetflix */,
 			);
 		};
 /* End PBXProject section */
@@ -252,7 +252,7 @@
 				C100A5C7277EE4B300F3EA37 /* WatchlistView.swift in Sources */,
 				C15DFE092770A1D500C552DB /* MainView.swift in Sources */,
 				C137E28C27785BFC00C0C6C0 /* MovieCollectionView.swift in Sources */,
-				C15DFE072770A1D500C552DB /* AppwriteFlixApp.swift in Sources */,
+				C15DFE072770A1D500C552DB /* AlmostNetflixApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,11 +382,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AppwriteFlix/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AlmostNetflix/Preview Content\"";
 				DEVELOPMENT_TEAM = L834TJ3ANM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppwriteFlix/Info.plist;
+				INFOPLIST_FILE = AlmostNetflix/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Almost Netflix";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -399,7 +400,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.appwrite.AppwriteFlix;
+				PRODUCT_BUNDLE_IDENTIFIER = io.appwrite.AlmostNetflix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -414,11 +415,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AppwriteFlix/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AlmostNetflix/Preview Content\"";
 				DEVELOPMENT_TEAM = L834TJ3ANM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppwriteFlix/Info.plist;
+				INFOPLIST_FILE = AlmostNetflix/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Almost Netflix";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -431,7 +433,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.appwrite.AppwriteFlix;
+				PRODUCT_BUNDLE_IDENTIFIER = io.appwrite.AlmostNetflix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -442,7 +444,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C15DFDFE2770A1D400C552DB /* Build configuration list for PBXProject "AppwriteFlix" */ = {
+		C15DFDFE2770A1D400C552DB /* Build configuration list for PBXProject "AlmostNetflix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C15DFE0F2770A1D500C552DB /* Debug */,
@@ -451,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C15DFE112770A1D500C552DB /* Build configuration list for PBXNativeTarget "AppwriteFlix" */ = {
+		C15DFE112770A1D500C552DB /* Build configuration list for PBXNativeTarget "AlmostNetflix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C15DFE122770A1D500C552DB /* Debug */,
